@@ -1,20 +1,30 @@
+// import { log } from "winjs";
 
-function getPopShows(callback) {
-    const popShowsUrl = 'http://api.tvmaze.com/shows';
 
-    $.get(popShowsUrl, function (data) {
-        callback(data.slice(0, 50));
-    })
-};
 
-function getSingleShow(showId, callback) {
-    const singleShowUrl = `http://api.tvmaze.com/shows/${showId}?embed[]=seasons&embed[]=cast`;
-
-    $.get(singleShowUrl, function (data) {
-        callback(data);
-
-    })
+function getPopShows() {
+    return fetch('http://api.tvmaze.com/shows')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (shows) {
+            shows.slice(0, 50);
+            return shows;
+        })
 }
+
+
+function getSingleShow(showId) {
+    return fetch(`http://api.tvmaze.com/shows/${showId}?embed[]=seasons&embed[]=cast`)
+        .then(function (response) {
+            return response.json();
+        })
+
+}
+
+
+
+
 
 
 export {
