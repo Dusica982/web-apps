@@ -24,9 +24,6 @@ function setupListenersOnKeybord() {
     const inputValue = $(this).val();
     data.getDropDownList(inputValue).then(function(arr) {
       console.log(arr);
-
-      const newArr = arr.map(function(element) {
-        return $(`<li>${element.show.name}</li>`);
       });
     });
   });
