@@ -1,11 +1,12 @@
+// import { inputValue } from "./controller";
+
 const $searchInput = $(".input");
 const $showArea = $(".shows");
 
 function renderShows(shows) {
-    $showArea.append('<h1 class="main-title">Popular Shows</h1>')
-    shows.forEach(function (show) {
-
-        const template = `
+  $showArea.append('<h1 class="main-title">Popular Shows</h1>');
+  shows.forEach(function(show) {
+    const template = `
           <a href="#">
             <div class="col-3 tv-show d-inline-block m-0 p-0"  data-show-id="${show.id}">
               <img src="${show.image.medium}" alt="">
@@ -13,31 +14,30 @@ function renderShows(shows) {
             </div>
           </a>`;
 
-        $showArea.append(template);
-    });
-
+    $showArea.append(template);
+  });
 }
 
 function renderSingleShow(show) {
-    $showArea.html('');
-    $showArea.append('<h1 class="main-title">' + show.name + '</h1>')
+  $showArea.html("");
+  $showArea.append('<h1 class="main-title">' + show.name + "</h1>");
 
-    let seasons = '';
-    console.log(show);
-    show._embedded.seasons.forEach(function (season) {
-        console.log(season);
-        seasons += '<li>' + season.premiereDate + ' - ' + season.endDate + '</li>';
-    });
+  let seasons = "";
+  console.log(show);
+  show._embedded.seasons.forEach(function(season) {
+    console.log(season);
+    seasons += "<li>" + season.premiereDate + " - " + season.endDate + "</li>";
+  });
 
-    let cast = '';
-    console.log(show);
-    show._embedded.cast.forEach(function (members) {
-        cast += '<li>' + members.person.name + '</li>';
-    });
+  let cast = "";
+  console.log(show);
+  show._embedded.cast.forEach(function(members) {
+    cast += "<li>" + members.person.name + "</li>";
+  });
 
-    console.log(seasons);
+  console.log(seasons);
 
-    const templateString = `
+  const templateString = `
       <div class="single-show">
         <h1>${show.name}</h1>
         <img src="${show.image.medium}" alt="" class="col-6">
@@ -51,19 +51,15 @@ function renderSingleShow(show) {
         <p>${show.summary}</p>
       </div>`;
 
-
-
-
-    $showArea.append(templateString);
+  $showArea.append(templateString);
 }
 
-// function getSearchInput() {
-//   return $searchInput.val();
-// }
-
-export {
-    renderShows,
-    renderSingleShow
-};
+function renderList (arr){
+  const newArr = arr.map(function(element) {
+    return $(`<li>${element.show.name}</li>`);
+    
+})
 
 
+
+export { renderShows, renderSingleShow };

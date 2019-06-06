@@ -1,33 +1,36 @@
-import * as ui from './ui.js'
-import * as data from './data.js'
-
-
-
+import * as ui from "./ui.js";
+import * as data from "./data.js";
 
 function init() {
-    data.getPopShows()
-        .then(function (shows) { //ovde ide ono sto poslednji then iz date-e vraca kao promise
-            ui.renderShows(shows);
-            setupListenersOnShowClick();
-        })
-
+  data.getPopShows().then(function(shows) {
+    //ovde ide ono sto poslednji then iz date-e vraca kao promise
+    ui.renderShows(shows);
+    setupListenersOnShowClick();
+  });
 }
-
 
 function setupListenersOnShowClick() {
-    $('.tv-show').on('click', function () {
-        const showId = $(this).attr('data-show-id');
+  $(".tv-show").on("click", function() {
+    const showId = $(this).attr("data-show-id");
 
-        data.getSingleShow(showId)
-            .then(function (showData) {
-                ui.renderSingleShow(showData);
-            })
-
-    })
-};
-
-
-export {
-    init
+    data.getSingleShow(showId).then(function(showData) {
+      ui.renderSingleShow(showData);
+    });
+  });
 }
 
+function setupListenersOnKeybord() {
+  $(".input").on("keydown", function() {
+    const inputValue = $(this).val();
+    data.getDropDownList(inputValue).then(function(arr) {
+      console.log(arr);
+
+      const newArr = arr.map(function(element) {
+        return $(`<li>${element.show.name}</li>`);
+      });
+    });
+  });
+}
+setupListenersOnKeybord();
+
+export { init, setupListenersOnShowClick, setupListenersOnKeybord };
