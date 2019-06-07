@@ -1,0 +1,19 @@
+body {
+    padding: 0;
+    margin: 0 auto;
+    color: white;
+    width: 70%;
+}
+
+.post {
+    background-color: rgb(95, 110, 146);
+    text-align: left;
+    margin: 5 px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+h1 {
+    background-color: salmon;
+    text-align: center;
+}
