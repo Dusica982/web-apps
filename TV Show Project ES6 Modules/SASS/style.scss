@@ -2,58 +2,61 @@ $bgcol: #343a40;
 $textcol1: white;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main-title {
-  text-align: center;
+    text-align: center;
 }
+
 .container {
-  width: 100%;
+    width: 100%;
 }
+
 header {
-  display: block;
-  background-color: $bgcol;
-  color: $textcol1;
-  width: 100%;
+    display: block;
+    background-color: $bgcol;
+    color: $textcol1;
+    width: 100%;
 }
 
 footer {
-  background-color: $bgcol;
-  color: $textcol1;
+    background-color: $bgcol;
+    color: $textcol1;
 }
 
 .navbar-brand {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 .input {
-  align-content: right;
+    align-content: right;
 }
 
 .tv-show {
-  width: 32%;
-  margin: 3px;
-  padding: 0;
-  border: 1px solid white;
+    width: 32%;
+    margin: 3px;
+    padding: 0;
+    border: 1px solid white;
 }
 
 img {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 10px 10px 0 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px 10px 0 0;
 }
+
 .show-name {
-  text-align: center;
-  text-decoration: none;
+    text-align: center;
+    text-decoration: none;
 }
 
 .shows {
-  width: 100%;
-  margin-left: 20%;
+    width: 100%;
+    text-align: center;
 }
