@@ -5,7 +5,7 @@ const $showArea = $(".shows");
 
 function renderShows(shows) {
   $showArea.append('<h1 class="main-title">Popular Shows</h1>');
-  shows.forEach(function (show) {
+  shows.forEach(function(show) {
     const template = `
           <a href="#">
             <div class="col-3 tv-show d-inline-block m-0 p-0"  data-show-id="${show.id}">
@@ -24,14 +24,14 @@ function renderSingleShow(show) {
 
   let seasons = "";
   console.log(show);
-  show._embedded.seasons.forEach(function (season) {
+  show._embedded.seasons.forEach(function(season) {
     console.log(season);
     seasons += "<li>" + season.premiereDate + " - " + season.endDate + "</li>";
   });
 
   let cast = "";
   console.log(show);
-  show._embedded.cast.forEach(function (members) {
+  show._embedded.cast.forEach(function(members) {
     cast += "<li>" + members.person.name + "</li>";
   });
 
@@ -55,11 +55,11 @@ function renderSingleShow(show) {
 }
 
 function renderList(shows) {
-  $showArea.html('');
-  shows.forEach(function (show) {
+  $showArea.html("");
+  shows.forEach(function(show) {
     if (show.show.image === null) {
-      $('img').attr('class', 'broken-img');
-      $('img').attr('src', 'https://tinyurl.com/y782eus8')
+      $("img").attr("class", "broken-img");
+      $("img").attr("src", "https://www.mcbaincamera.com/_toolbox/noImageAvailable.jpg");
     } else {
       const template = `
           <a href="#">
@@ -70,9 +70,7 @@ function renderList(shows) {
           </a>`;
       $showArea.append(template);
     }
-  })
-
-
+  });
 
   //   const newArr = arr.map(function (element) {
   //     const oneFilm = $(`<li>${element.show.name}</li>`)
@@ -83,12 +81,6 @@ function renderList(shows) {
   //       return oneFinishedFilm
   //     })
   //     .then
-
 }
 
-
-export {
-  renderShows,
-  renderSingleShow,
-  renderList
-};
+export { renderShows, renderSingleShow, renderList };
