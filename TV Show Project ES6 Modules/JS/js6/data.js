@@ -1,35 +1,29 @@
-
 function getPopShows() {
   return fetch("http://api.tvmaze.com/shows")
-    .then(function (response) {
+    .then(function(response) {
       return response.json();
     })
-    .then(function (shows) {
+    .then(function(shows) {
       shows.slice(0, 50);
       return shows;
     });
 }
 
 function getSingleShow(showId) {
-  return fetch(`http://api.tvmaze.com/shows/${showId}?embed[]=seasons&embed[]=cast`).then(function (response) {
+  return fetch(`http://api.tvmaze.com/shows/${showId}?embed[]=seasons&embed[]=cast`).then(function(response) {
     return response.json();
   });
 }
 
-function getDropDownList(inputValue) {
+function getSearch(inputValue, limit) {
   return fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
-    .then(function (response) {
+    .then(function(response) {
       return response.json();
     })
-    .then(function (arr) {
-      arr.slice(0, 10);
+    .then(function(arr) {
+      if (limit) arr.slice(0, limit);
       return arr;
     });
 }
 
-export {
-  // getShows: getShows,
-  getPopShows,
-  getSingleShow,
-  getDropDownList
-};
+export { getPopShows, getSingleShow, getSearch };

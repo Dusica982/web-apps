@@ -2,49 +2,87 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .main-title {
-  text-align: center; }
+  text-align: center;
+}
 
 .container {
-  width: 100%; }
+  width: 100%;
+}
 
 header {
   display: block;
   background-color: #343a40;
   color: white;
-  width: 100%; }
+  width: 100%;
+}
 
 footer {
   background-color: #343a40;
-  color: white; }
+  color: white;
+}
 
 .navbar-brand {
   text-decoration: none;
-  color: white; }
+  color: white;
+}
+
+.form-inline {
+  overflow: visible;
+  position: relative;
+}
+
+.navbar {
+  overflow: visible;
+  height: 65px;
+}
 
 .input {
-  align-content: right; }
+  align-content: right;
+}
 
 .tv-show {
   width: 32%;
   margin: 3px;
   padding: 0;
-  border: 1px solid white; }
+  border: 1px solid white;
+}
 
 img {
   width: 100%;
   margin: 0;
   padding: 0;
-  border-radius: 10px 10px 0 0; }
+  border-radius: 10px 10px 0 0;
+}
 
 .show-name {
   text-align: center;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .shows {
   width: 100%;
-  text-align: center; }
+  text-align: center;
+}
+
+.single-show img {
+  float: left;
+  width: 35%;
+  padding: 90px;
+}
+
+#ul {
+  position: absolute;
+  top: 40px;
+  background-color: #343a40;
+  z-index: 1000;
+  width: 220px;
+  padding: 5px;
+  border-radius: 5px;
+  list-style-type: none;
+}
 
 /*# sourceMappingURL=style.css.map */

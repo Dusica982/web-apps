@@ -2,6 +2,7 @@
 
 const $searchInput = $(".input");
 const $showArea = $(".shows");
+const $ulArea = $("#ul");
 
 function renderShows(shows) {
   $showArea.append('<h1 class="main-title">Popular Shows</h1>');
@@ -20,7 +21,7 @@ function renderShows(shows) {
 
 function renderSingleShow(show) {
   $showArea.html("");
-  $showArea.append('<h1 class="main-title">' + show.name + "</h1>");
+  // $showArea.append('<h1 class="main-title">' + show.name + "</h1>");
 
   let seasons = "";
   console.log(show);
@@ -71,16 +72,16 @@ function renderList(shows) {
       $showArea.append(template);
     }
   });
-
-  //   const newArr = arr.map(function (element) {
-  //     const oneFilm = $(`<li>${element.show.name}</li>`)
-  //     return oneFilm
-  //   })
-  //     .then(function (oneFilm) {
-  //       $(`<ul>${oneFilm}</ul>`)
-  //       return oneFinishedFilm
-  //     })
-  //     .then
 }
 
-export { renderShows, renderSingleShow, renderList };
+function dropDownList(shows) {
+  $ulArea.html("");
+  shows.forEach(function(show) {
+    const template = `
+    <li><a href="${show.show.name}" data-show-id="${show.show.id}">${show.show.name}</a></li>
+    `;
+    $ulArea.append(template);
+  });
+}
+
+export { renderShows, renderSingleShow, renderList, dropDownList };
