@@ -11,9 +11,11 @@ const UserLists = (props) => {
             <div className="user" key={i}>
                 <img src={oneUser.img} />
                 <div>
-                    <p>{oneUser.name}</p>
-                    <p>{oneUser.hideEmail()}</p>
-                    <p>{oneUser.date}</p>
+                    <p>{oneUser.setFullName()}</p>
+                    <i className="fa fa-envelope" aria-hidden="true">{oneUser.hideEmail()}</i>
+                    <p>
+                        <i className="fa fa-birthday-cake" aria-hidden="true">{oneUser.date}</i>
+                    </p>
                 </div>
             </div>
         )
