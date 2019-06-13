@@ -1,14 +1,48 @@
+#root {
+  margin: 0 auto;
+}
 header {
-  background-color: aqua;
+  background-color: rgb(233, 68, 145);
   width: 80%;
   border-radius: 5px;
-  padding: 5px;
   margin: 10px;
+  margin: 0 auto;
+}
+button {
+  padding: 5px;
+  margin-left: 10px;
+}
+.user {
+  background-color: rgb(235, 182, 207);
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid black;
 }
 
- {
+.user div {
+  padding-left: 25px;
+}
+
+.user img {
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-left: 15px;
+  height: 100px;
+  width: 100px;
 }
 
 footer {
   background-color: rgb(139, 97, 179);
+}
+
+.buttonOne {
+  width: 10%;
+  border-radius: 5px;
+  border-bottom: 5px;
+}
+.buttonTwo {
+  width: 10%;
+  border-radius: 5px;
+  border-bottom: 5px;
 }

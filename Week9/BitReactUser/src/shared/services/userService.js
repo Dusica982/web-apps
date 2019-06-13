@@ -12,6 +12,7 @@ const fetchUsers = () => {
             const users = apiUsers.map((user) => {
                 return new User(user.name.first, user.email, user.picture.thumbnail, user.dob.date)
             })
+            console.log(users);
 
             return users;
         })

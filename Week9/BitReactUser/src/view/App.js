@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './Header'
 import UserLists from './UserLists'
 import Footer from './Footer'
-import users from '../shared/users';
 import fetchUsers from '../shared/services/userService';
 
 class App extends React.Component {
@@ -23,7 +22,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <UserLists users={users} />
+        <UserLists users={this.state.users} />
         <Footer />
       </React.Fragment >
     )

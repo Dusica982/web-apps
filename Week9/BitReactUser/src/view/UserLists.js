@@ -1,22 +1,26 @@
 import React from 'react';
-import Boxpost from './Boxpost';
+import { User } from '../shared/enitities/User';
 
 
 const UserLists = (props) => {
-    return (
-        <React.Fragment>
-            {props.users.map((user, i) => (
-                <Boxpost
-                    key={i}
-                    name={user.name.first}
-                    email={user.email}
-                    img={user.picture.thumbnail}
-                    date={user.dob.date}
-                />
-            ))}
-        </React.Fragment>
-    )
+    console.log(props.users)
 
+    const arrOfUsers = props.users.map((oneUser, i) => {
+        return (
+
+            <div className="user" key={i}>
+                <img src={oneUser.img} />
+                <div>
+                    <p>{oneUser.name}</p>
+                    <p>{oneUser.hideEmail()}</p>
+                    <p>{oneUser.date}</p>
+                </div>
+            </div>
+        )
+    })
+    console.log(arrOfUsers);
+
+    return arrOfUsers;
 }
 
 export default UserLists;
