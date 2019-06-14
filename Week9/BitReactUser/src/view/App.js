@@ -3,6 +3,7 @@ import Header from './Header'
 import UserLists from './UserLists'
 import Footer from './Footer'
 import fetchUsers from '../shared/services/userService';
+import GridStructure from './GridStructure';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +23,9 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <UserLists users={this.state.users} />
+        <div className="wrapper container">
+          <UserLists users={this.state.users} />
+        </div >
         <Footer />
       </React.Fragment >
     )

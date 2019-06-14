@@ -1,0 +1,47 @@
+button {
+  padding: 5px;
+  margin-left: 10px;
+}
+.userGrid {
+  height: 60%;
+  margin: 20px auto;
+  border: 1px solid rgb(204, 201, 201);
+  display: inline-block;
+  width: 30%;
+  margin: 5px 10px;
+}
+
+.userGrid div {
+  padding-left: 8px;
+  position: relative;
+}
+
+.usernameGrid {
+  position: absolute;
+  bottom: 75%;
+  left: 15px;
+  color: white;
+}
+
+.userGrid img {
+  width: 100%;
+}
+
+.emailGrid {
+  margin-bottom: 0;
+}
+
+footer {
+  background-color: rgb(139, 97, 179);
+}
+
+/* .buttonOne {
+  width: 10%;
+  border-radius: 5px;
+  border-bottom: 5px;
+}
+.buttonTwo {
+  width: 10%;
+  border-radius: 5px;
+  border-bottom: 5px;
+} */

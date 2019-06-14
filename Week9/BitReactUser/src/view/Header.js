@@ -1,11 +1,10 @@
 import React from 'react';
-
+import './Header.css';
 const Header = () => {
     return (
         <header className="header">
-            <h1>{"React Users"}</h1>
-            <button className="buttonOne">Grid</button>
-            <button className="buttonTwo">List</button>
+            <h1>{"Bit Persons"}</h1>
+
         </header>
     )
 }

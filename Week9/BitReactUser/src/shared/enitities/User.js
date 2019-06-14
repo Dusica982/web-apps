@@ -7,7 +7,7 @@ class User {
         this.date = date;
     }
     hideEmail() {
-        return this.email.slice(0, 3)
+        return this.email.slice(0, 3) + "..." + this.email.slice(6, 26)
     }
     setFullName() {
         return this.name + " " + this.last
