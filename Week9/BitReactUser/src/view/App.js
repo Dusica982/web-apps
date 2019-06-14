@@ -16,12 +16,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetchUsers()
-      .then(users => this.setState({ users }))
+    this.fetchAndSaveUsers();
   }
 
+  fetchAndSaveUsers = () => (
+    fetchUsers()
+      .then(users => this.setState({ users }))
+  )
 
-  onButtonCLickChangeToState = (e) => {
+  ChangingState = (e) => {
 
     this.setState((prevState) => {
       return {
@@ -33,7 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header GridOrList={this.state.isGrid} onClickEvent={this.onButtonCLickChangeToState} />
+        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
         <div className="wrapper container">
           {
             this.state.isGrid
