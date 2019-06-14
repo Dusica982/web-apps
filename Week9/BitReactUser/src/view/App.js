@@ -9,22 +9,37 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      isGrid: false,
+
     }
   }
 
   componentDidMount() {
     fetchUsers()
       .then(users => this.setState({ users }))
+  }
 
+
+  onButtonCLickChangeToState = (e) => {
+
+    this.setState((prevState) => {
+      return {
+        isGrid: !prevState.isGrid
+      }
+    })
   }
 
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <Header GridOrList={this.state.isGrid} onClickEvent={this.onButtonCLickChangeToState} />
         <div className="wrapper container">
-          <UserLists users={this.state.users} />
+          {
+            this.state.isGrid
+              ? <GridStructure users={this.state.users} />
+              : <UserLists users={this.state.users} />
+          }
         </div >
         <Footer />
       </React.Fragment >

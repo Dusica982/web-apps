@@ -24,5 +24,4 @@ const UserLists = (props) => {
 
     return arrOfUsers;
 }
-
 export default UserLists;
