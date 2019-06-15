@@ -7,7 +7,7 @@ const GridStructure = props => {
     return (
       <div className="userGrid" key={i}>
         <img src={oneUser.img} />
-        <div>
+        <div className={oneUser.gender}>
           <p className="usernameGrid">{oneUser.setFullName()}</p>
           <p className="emailGrid">{oneUser.hideEmail()}</p>
           <p>Birth date {oneUser.setDate()}</p>

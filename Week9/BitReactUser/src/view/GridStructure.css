@@ -35,13 +35,10 @@ footer {
   background-color: rgb(139, 97, 179);
 }
 
-/* .buttonOne {
-  width: 10%;
-  border-radius: 5px;
-  border-bottom: 5px;
+.female {
+  background-color: #ffebee;
 }
-.buttonTwo {
-  width: 10%;
-  border-radius: 5px;
-  border-bottom: 5px;
-} */
+
+p {
+  margin: 0;
+}
