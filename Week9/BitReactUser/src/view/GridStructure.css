@@ -18,7 +18,7 @@ button {
 
 .usernameGrid {
   position: absolute;
-  bottom: 75%;
+  bottom: 100%;
   left: 15px;
   color: white;
 }
@@ -41,4 +41,15 @@ footer {
 
 p {
   margin: 0;
+}
+
+.inputDiv {
+  margin-left: 215px;
+}
+
+.input {
+  margin-left: 10px;
+  width: 1010px;
+  border: none;
+  border-bottom: 1px solid gray;
 }

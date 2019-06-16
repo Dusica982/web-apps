@@ -31,3 +31,18 @@ footer {
   border-radius: 5px;
   border-bottom: 5px;
 }
+
+.female {
+  background-color: #ffebee;
+}
+
+.inputDiv {
+  margin-left: 215px;
+}
+
+.input {
+  margin-left: 10px;
+  width: 1000px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
