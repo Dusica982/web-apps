@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import fetchUsers from "../shared/services/userService";
 import GridStructure from "./GridStructure";
 import InputButton from "./Input";
+import Loading from "./Loading";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,15 +18,23 @@ class App extends React.Component {
       users: [],
       isGrid: savedIsGrid || false,
       state: "",
-      inputValue: ""
+      inputValue: "",
+      stateLoading: true
     };
   }
 
   componentDidMount() {
     this.fetchAndSaveUsers();
+
   }
 
-  fetchAndSaveUsers = () => fetchUsers().then(users => this.setState({ users }));
+  fetchAndSaveUsers = () => {
+    this.setState({ stateLoading: true })
+    fetchUsers()
+      .then(users => {
+        this.setState({ users, stateLoading: false })
+      });
+  }
 
   ChangingState = e => {
     this.setState(prevState => {
@@ -45,49 +54,23 @@ class App extends React.Component {
   render() {
     const filteredUsers = this.state.users.filter(user => user.name.includes(this.state.inputValue));
 
-    return (
+    const main = (
       <React.Fragment>
-        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
         <InputButton changesOnInput={this.changesOnInput} value={this.state.inputValue} />
 
         <div className="wrapper container">
           {this.state.isGrid ? <GridStructure users={filteredUsers} /> : <UserLists users={filteredUsers} />}
         </div>
+      </React.Fragment>
+    );
+
+    return (
+      <React.Fragment>
+        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
+        {this.state.stateLoading ? <Loading /> : main}
         <Footer />
       </React.Fragment>
     );
   }
 }
-
 export default App;
-
-// const { users, inputValue } = this.state;
-
-// const usersFiltered = users.filter(user => user.name.first.toLowerCase().includes(inputValue.toLowerCase()));
-
-// if (this.state.users.length === 0) {
-//   return (
-//     <React.Fragment>
-//       <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
-//       <InputButton changesOnInput={this.changesOnInput} value={this.state.inputValue} />
-
-//       <div className="wrapper container">
-//         {this.state.isGrid ? <GridStructure users={this.state.users} /> : <UserLists users={this.state.users} />}
-//       </div>
-//       <Footer />
-//     </React.Fragment>
-//   );
-// } else {
-//   return (
-//     <React.Fragment>
-//       <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
-//       <InputButton changesOnInput={this.changesOnInput} value={this.state.inputValue} />
-
-//       <div className="wrapper container">
-//         {this.state.isGrid ? <GridStructure users={this.state.users} /> : <UserLists users={this.state.users} />}
-//       </div>
-//       <Main allUsers={usersFiltered} layout={this.state.layout} />
-//       <Footer />
-//     </React.Fragment>
-//   );
-// }
