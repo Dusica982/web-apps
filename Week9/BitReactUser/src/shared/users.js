@@ -2603,5 +2603,4 @@ const randomUsers = [
     }
 ]
 
-
 export default randomUsers;

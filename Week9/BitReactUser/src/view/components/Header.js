@@ -1,15 +1,16 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 // import fetchUsers from "../shared/services/userService";
 
 const Header = (props) => {
   return (
     <header className="header">
       <h1>
-        <a href="#" onClick={props.backToHome} className="logo">Bit Persons</a>
+        <Link to='/' onClick={props.backToHome} className="logo">Bit Persons</Link>
       </h1>
 
-      <a className="about allLinks" href="#" onClick={props.about}>About</a>
+      <Link className="about allLinks" to="/about" onClick={props.about}>About</Link>
 
       <a onClick={props.onReload} className="refreshButton allLinks" href="#">
         <i className="fas fa-redo-alt" />
