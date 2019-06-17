@@ -8,7 +8,7 @@ header {
   color: white;
   position: relative;
 }
-header a {
+header .allLinks {
   text-decoration: none;
   color: white;
   position: absolute;
@@ -16,6 +16,21 @@ header a {
   right: 20px;
   font-size: 30px;
 }
+.logo {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
 .refreshButton {
   margin-right: 50px;
+}
+
+header div {
+  display: flex;
+}
+
+.about {
+  margin-right: 95px;
+  font-size: 1.2rem;
+  margin-top: 10px;
 }

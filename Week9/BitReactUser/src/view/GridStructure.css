@@ -31,9 +31,9 @@ button {
   margin-bottom: 0;
 }
 
-footer {
+/* footer {
   background-color: rgb(139, 97, 179);
-}
+} */
 
 .female {
   background-color: #ffebee;
@@ -45,11 +45,12 @@ p {
 
 .inputDiv {
   margin-left: 215px;
+  width: 100%;
 }
 
 .input {
   margin-left: 10px;
-  width: 1010px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid gray;
 }

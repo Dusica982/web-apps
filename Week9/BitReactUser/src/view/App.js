@@ -6,6 +6,7 @@ import fetchUsers from "../shared/services/userService";
 import GridStructure from "./GridStructure";
 import InputButton from "./Input";
 import Loading from "./Loading";
+import About from './About';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class App extends React.Component {
       isGrid: savedIsGrid || false,
       state: "",
       inputValue: "",
-      stateLoading: true
+      stateLoading: true,
+      aboutPage: false
     };
   }
 
@@ -51,25 +53,32 @@ class App extends React.Component {
     this.setState({ inputValue: e.target.value });
   };
 
+  aboutPage = () => {
+    this.setState({ aboutPage: true })
+  }
+  homePage = () => {
+    this.setState({ aboutPage: false })
+  }
+
   render() {
     const filteredUsers = this.state.users.filter(user => user.name.includes(this.state.inputValue));
 
     const main = (
-      <React.Fragment>
+      <>
         <InputButton changesOnInput={this.changesOnInput} value={this.state.inputValue} />
 
-        <div className="wrapper container">
+        {this.state.aboutPage === true ? <About /> : <div className="wrapper container">
           {this.state.isGrid ? <GridStructure users={filteredUsers} /> : <UserLists users={filteredUsers} />}
-        </div>
-      </React.Fragment>
+        </div>}
+      </>
     );
 
     return (
-      <React.Fragment>
-        <Header GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} />
+      <>
+        <Header backToHome={this.homePage} GridOrList={this.state.isGrid} onClickEvent={this.ChangingState} onReload={this.fetchAndSaveUsers} about={this.aboutPage} />
         {this.state.stateLoading ? <Loading /> : main}
         <Footer />
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -6,7 +6,7 @@ const UserLists = props => {
 
   const arrOfUsers = props.users.map((oneUser, i) => {
     return (
-      <div className={`user ${oneUser.gender}`} key={i}>
+      <div className={`user ${oneUser.gender}`} key={i} >
         <img src={oneUser.img} />
         <div>
           <p>{oneUser.setFullName()}</p>
@@ -21,7 +21,7 @@ const UserLists = props => {
             </i>
           </p>
         </div>
-      </div>
+      </div >
     );
   });
 
