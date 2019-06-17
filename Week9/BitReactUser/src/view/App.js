@@ -10,11 +10,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    const savedIsGrid = localStorage.getItem("isGrid"); //ovim je dohvacen local storage
+    const savedData = localStorage.getItem("isGrid")
+    const savedIsGrid = JSON.parse(savedData) //ovim je dohvacen local storage
 
     this.state = {
       users: [],
-      isGrid: typeof savedIsGrid !== "undefined" ? JSON.parse(savedIsGrid) : false,
+      isGrid: savedIsGrid || false,
       state: "",
       inputValue: ""
     };
