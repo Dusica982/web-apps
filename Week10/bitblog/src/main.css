@@ -1,0 +1,74 @@
+/* GLOBAL */
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+/* HEADER */
+header {
+display: flex;
+justify-content: space-around;
+/* border: 1px dotted tomato; */
+}
+header nav {
+    align-self: center;
+}
+header nav a {
+    padding: 5px;
+}
+/* PostsBox */
+main h1 {
+    text-align: center;
+}
+/* PostsTitle */
+.singlePost {
+    border-bottom: 1px solid #000;
+}
+/* FOOTER*/
+footer {
+    text-align: center;
+    margin-top: 80px;
+}
+/*Posts*/
+.singlePostWrapper{
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.otherPosts a {
+    display: block;
+}
+
+/*Authors*/
+
+.list-of-users p{
+    border-bottom: 1px solid black;
+    padding: 7px 0;
+}
+
+.author-wrapper h2{
+    text-align: center;
+}
+
+/*singleInfoAuthor*/
+
+.infoAddress{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+.InfoNameSurname {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+.InfoNameSurname div {
+   align-self: center;
+}
+
+.aboutBox{
+    text-align: center;
+}
