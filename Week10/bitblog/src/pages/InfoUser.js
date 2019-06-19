@@ -19,7 +19,7 @@ class InfoUser extends React.Component {
         const userId = this.props.match.params.id;
 
         fetchAuthor(userId)
-            .then(author => this.setState({ author }));
+            .then(author => this.setState({ author }))
     }
 
     render() {

@@ -1,17 +1,17 @@
 import React from 'react';
 
-
 const InfoNameSurname = (props) => {
     return (
         <>
             <div className="InfoNameSurname">
+                {console.log(props.author)}
 
                 <img src="https://www.dcaa.gov.ae/PublishingImages/no-image.jpeg" />
                 <div>
                     <h3>{props.author.name}</h3>
-                    <p>username:My-cool-username</p>
-                    <p>email:my-cool@gmail.com</p>
-                    <p>phone:060300000</p>
+                    <p>username:{props.author.username}</p>
+                    <p>email:{props.author.email}</p>
+                    <p>phone:{props.author.phone}</p>
                 </div>
             </div>
         </>

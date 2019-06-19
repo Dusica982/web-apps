@@ -1,14 +1,13 @@
 import React from 'react';
 
 
-const InfoCompany = () => {
+const InfoCompany = (props) => {
     return (
         <>
             <div>
                 <h3>Company</h3>
-                <p>name:BIT</p>
-                <p>slogan:papapapda</p>
-
+                <p>name: {props.author.companyName}</p>
+                <p>slogan: {props.author.slogan}</p>
             </div>
         </>
     )

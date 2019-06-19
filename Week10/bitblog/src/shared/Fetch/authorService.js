@@ -12,13 +12,12 @@ export const fetchAuthors = () => {
         })
 }
 
-
 export const fetchAuthor = (id) => {
     let url = "https://jsonplaceholder.typicode.com/users/" + id;
 
     return fetch(url)
         .then(response => response.json())
         .then(apiAuthor => {
-            return new Author(apiAuthor.id, apiAuthor.name)
+            return new Author(apiAuthor.id, apiAuthor.name, apiAuthor.username, apiAuthor.email, apiAuthor.phone, apiAuthor.address.street, apiAuthor.address.city, apiAuthor.address.zipcode, apiAuthor.company.name, apiAuthor.company.bs)
         })
 }
