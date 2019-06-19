@@ -3,12 +3,12 @@ import InfoNameSurname from './InfoNameSurname';
 import InfoAddress from './InfoAddress';
 import InfoCompany from './InfoCompany';
 import { Link } from "react-router-dom";
+// import getUserInfo from ''
 
 const InfoSingleAuthorBox = () => {
 
     return (
         <>
-
             <div className="container">
                 <Link to="/authors">Back</Link>
                 <InfoNameSurname />
@@ -17,7 +17,6 @@ const InfoSingleAuthorBox = () => {
             </div>
         </>
     )
-
 }
 
 export default InfoSingleAuthorBox;

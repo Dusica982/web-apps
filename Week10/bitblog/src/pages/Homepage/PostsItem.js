@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const PostItem = (props) => {
-    console.log(props);
-
+    // const post = props.post
+    const { post } = props
     return (
         <div className="singlePost">
-            <Link to={`/posts/${props.post.id}`}>
-                <h2>{props.post.title}</h2>
+            <Link to={`/posts/${post.id}`}>
+                <h2>{post.title}</h2>
             </Link>
 
-            <p>Lorem ipsum...</p>
+            <p>{post.body}</p>
         </div>
     )
 }
