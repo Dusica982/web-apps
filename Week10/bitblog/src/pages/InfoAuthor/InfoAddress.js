@@ -1,21 +1,25 @@
 import React from 'react';
 
-
-const InfoAddress = () => {
+const InfoAddress = (props) => {
     return (
         <>
-            <div className="infoAddress">
-                <div>
-                    <h3>Address</h3>
-                    <p>street: Bla Bla Str</p>
-                    <p>city: Belgrade</p>
-                    <p>zipcode: 1000</p>
-                </div>
+            {console.log(props.infos)}
 
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=" width="200" height="200" frameborder="0" allowfullscreen></iframe>
-                </div>
+            <div className="infoAddress">
+                {
+                    <div>
+                        <h3>Address</h3>
+                        <p>street: bla</p>
+                        <p>city: bla</p>
+                        <p>zipcode: bla</p>
+                    </div>
+                }
             </div>
+
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=" width="200" height="200" frameborder="0" allowfullscreen></iframe>
+            </div>
+
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import ListOfAuthors from './ListOfAuthors';
-import getUserInfo from '../../shared/Fetch/fetchInfoUser';
+import oneUserInfo from '../../shared/Fetch/fetchInfoUser';
 
 class Authors extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class Authors extends React.Component {
     }
 
     componentDidMount() {
-        getUserInfo()
+        oneUserInfo()
             .then((data) => {
                 console.log(data);
                 this.setState({

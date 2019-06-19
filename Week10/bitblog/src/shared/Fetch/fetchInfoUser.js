@@ -1,8 +1,7 @@
-const getUserInfo = () => {
+const getUserInfo = (id) => {
+    let url = "https://jsonplaceholder.typicode.com/users/";
 
-    return fetch('https://jsonplaceholder.typicode.com/users')
-        .then((res) => res.json())
-        .then((data) => data)
+    return url + { id };
 }
 
 export default getUserInfo;
