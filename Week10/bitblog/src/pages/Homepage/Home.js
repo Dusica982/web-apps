@@ -1,7 +1,7 @@
 import React from 'react';
 import PostsItem from './PostsItem';
-// import ApiPost from '../../shared/userposts';
-// import Post from "../../shared/entities/Post";
+import { fetchPosts } from '../../shared/Fetch/postService'
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +12,10 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        // fetchPo
+        fetchPosts()
+            .then((posts) => {
+                this.setState({ posts })
+            })
     }
 
     render() {
