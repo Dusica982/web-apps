@@ -55,12 +55,7 @@ class InfoSingleAuthorBox extends React.Component {
             <>
 
 
-                <div className="container">
-                    <Link to="/authors">Back</Link>
-                    <InfoNameSurname infos={this.state.infoAboutUser} />
-                    <InfoAddress infos={this.state.infoAboutUser} />
-                    <InfoCompany infos={this.state.infoAboutUser} />
-                </div>
+
             </>
         )
     }

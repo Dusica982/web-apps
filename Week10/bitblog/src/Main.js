@@ -19,11 +19,10 @@ class Main extends React.Component {
           <Switch>
 
             <Route path='/posts/:postId' component={Post} />
-            <Route path='/home' component={Home} />
+            <Route path='/authors/:id' component={InfoUser} />
             <Route path='/authors' component={Authors} />
-            <Route path='/info-user' component={InfoUser} />
             <Route path='/about' component={About} />
-
+            <Route path='/home' component={Home} />
             <Redirect to="/home" />
           </Switch>
         </div>

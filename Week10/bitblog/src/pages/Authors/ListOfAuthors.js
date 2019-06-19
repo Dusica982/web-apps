@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const ListOfAuthors = (props) => {
     return (
         <div className=" container list-of-users">
-            {props.authors.map((post) => {
+            {props.authors.map((author) => {
                 return (
-                    <Link to={`/info-user/${post.id}`} >
-                        <p>{post.name} {post.username}</p>
+                    <Link to={`/authors/${author.id}`} >
+                        <p>{author.name} {author.username}</p>
                     </Link>
                 )
             })
