@@ -1,6 +1,8 @@
 import React from 'react'
 import { getUsers } from '../../services/usersService';
-import UsersStyle from './UsersStyle.css'
+import UsersStyle from './UsersStyle.css';
+import { Link } from 'react-router-dom';
+import { getUser } from '../../services/usersService'
 
 class Users extends React.Component {
     constructor(props) {
@@ -31,12 +33,12 @@ class Users extends React.Component {
                 </tr>
                 {
                     this.state.users.map((elem) => {
-                        console.log(this.state)
+                        console.log(this.props.match)
                         return (<tr>
                             <td>{elem.id}</td>
-                            <td>{elem.name}</td>
+                            <td><Link to={"/users/" + elem.id}>{elem.name}</Link></td>
                             <td>{elem.email}</td>
-                            <td>{elem.city}</td>
+                            <td>{elem.ity}</td>
                         </tr>)
                     })
                 }

@@ -11,3 +11,15 @@ export const getUsers = () => {
             })
         })
 }
+
+export const getUser = (id) => {
+    let url = "https://jsonplaceholder.typicode.com/users/" + id;
+
+    return fetch(url)
+        .then(response => response.json())
+        .then((apiUser) => {
+
+
+            return new User(apiUser.id, apiUser.name, apiUser.email, apiUser.address.city)
+        })
+}
