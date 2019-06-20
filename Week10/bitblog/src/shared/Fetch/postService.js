@@ -8,7 +8,7 @@ export const fetchPosts = () => {
         .then(response => response.json())
         .then(apiPosts => {
             return apiPosts.map(apiPost => {
-                return new Post(apiPost.title, apiPost.body, apiPost.id)
+                return new Post(apiPost.title, apiPost.body, apiPost.id, apiPost.userId)
             })
         })
 }
@@ -18,7 +18,7 @@ export const fetchPost = (id) => {
     return fetch(url)
         .then(response => response.json())
         .then(apiPost => {
-            return new Post(apiPost.title, apiPost.body, apiPost.id)
+            return new Post(apiPost.title, apiPost.body, apiPost.id, apiPost.userId)
         })
 }
 export const fetchSingleAuthorPosts = (userId) => {
