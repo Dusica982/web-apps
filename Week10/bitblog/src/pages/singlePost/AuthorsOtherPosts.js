@@ -1,18 +1,20 @@
 import React from 'react';
 
-const AuthorsOtherPosts = () => {
+const AuthorsOtherPosts = (props) => {
+    let authorsPosts = props.authorPosts;
 
     return (
         <>
             <div className="otherPosts">
                 <h3>3 more posts from same author</h3>
-                <a href="#">Title 10 - velit, velputate</a>
-                <a href="#">Title 10 - velit, velputate</a>
-                <a href="#">Title 10 - velit, velputate</a>
+                {
+                    authorsPosts.map((onePost) => {
+                        return <a href="#">{onePost.title}</a>
+                    })
+                }
             </div>
         </>
     )
-
 }
 
 export default AuthorsOtherPosts;

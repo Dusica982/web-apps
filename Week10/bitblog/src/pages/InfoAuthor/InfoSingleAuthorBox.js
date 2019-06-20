@@ -14,32 +14,6 @@ class InfoSingleAuthorBox extends React.Component {
         }
     }
 
-    // setMainUserInfo() {
-    //     console.log(this.props.match.params.id);
-    //     // const idForUrl = this.props.match.params.id;
-
-    //     getUserInfo(idForUrl)
-    //         .then((idForUrl) => {
-    //             this.setState({ infoAboutUser: idForUrl });
-    //         })
-    // }
-
-    // setMainUserInfo() {
-    //     const idForUrl = this.props.match.params.id;
-    //     getUserInfo(idForUrl)
-    //         .then((data) => {
-    //             console.log(data);
-    //         })
-    // }
-
-    // componentDidMount() {
-    //     console.log(this.setMainUserInfo())
-    // }
-
-
-
-    // CompanyUserInfo
-    // AddressUserInfo
 
     componentDidMount() {
         fetch(getUserInfo() + this.props.match.params.id)

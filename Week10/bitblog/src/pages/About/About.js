@@ -11,9 +11,8 @@ class About extends React.Component {
 
     render() {
         return (
-            <>
-                <AboutBox />
-            </>
+
+            <AboutBox />
         )
     }
 
