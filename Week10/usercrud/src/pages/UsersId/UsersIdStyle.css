@@ -1,0 +1,12 @@
+form label, form input, form button{
+display: block;
+margin: 20px;
+}
+
+
+form input {
+    width: 50%;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(211, 176, 245);
+}

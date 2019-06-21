@@ -1,8 +1,7 @@
 import React from 'react'
 import { getUsers } from '../../services/usersService';
-import UsersStyle from './UsersStyle.css';
+import './UsersStyle.css';
 import { Link } from 'react-router-dom';
-import { getUser } from '../../services/usersService'
 
 class Users extends React.Component {
     constructor(props) {
@@ -23,27 +22,28 @@ class Users extends React.Component {
             return <p> Loading data... </p>
         }
         return (
+            <main className="container" >
+                < table>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>city</th>
+                    </tr>
+                    {
+                        this.state.users.map((elem) => {
+                            return (<tr>
+                                <td>{elem.id}</td>
+                                <td><Link to={"/users/" + elem.id}>{elem.name}</Link></td>
+                                <td>{elem.email}</td>
+                                <td>{elem.city}</td>
+                            </tr>)
+                        })
+                    }
+                </table >
 
-            < table >
-                <tr>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>email</th>
-                    <th>city</th>
-                </tr>
-                {
-                    this.state.users.map((elem) => {
-                        console.log(this.props.match)
-                        return (<tr>
-                            <td>{elem.id}</td>
-                            <td><Link to={"/users/" + elem.id}>{elem.name}</Link></td>
-                            <td>{elem.email}</td>
-                            <td>{elem.ity}</td>
-                        </tr>)
-                    })
-                }
-            </table >
-
+                <Link to="/users/create" ><button>Create</button></Link>
+            </main>
         )
     }
 }

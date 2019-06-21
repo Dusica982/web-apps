@@ -19,7 +19,7 @@ export const getUser = (id) => {
         .then(response => response.json())
         .then((apiUser) => {
 
-
             return new User(apiUser.id, apiUser.name, apiUser.email, apiUser.address.city)
         })
 }
+

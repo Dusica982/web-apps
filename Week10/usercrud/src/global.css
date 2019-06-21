@@ -1,0 +1,14 @@
+.container{
+    margin: 0 auto;
+    width:1200px;
+    border: 1px solid gray;
+    color: rgb(140, 65, 214);
+}
+
+header{
+    color: rgb(140, 65, 214);
+}
+
+footer{
+    color: rgb(140, 65, 214);
+}
