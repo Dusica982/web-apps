@@ -5,7 +5,9 @@ class UsersCreate extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            users: []
+            name: "",
+            email: "",
+            errorMsg: ""
         }
     }
 
@@ -13,30 +15,49 @@ class UsersCreate extends React.Component {
 
     }
 
-    errorHandler() {
-        const nameInput = document.querySelector("#name").value;
-        const emailInput = document.querySelector("#email");
-        const paraInput = document.querySelector("#para");
+    onChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({
+            [name]: value
+        })
+        // console.log(name, value);
+    }
 
-        if (nameInput) {
+    validation = (e) => {
+        const { name, email } = this.state;
 
-            console.log("error");
+        if (name.length < 3) {
+            e.preventDefault()
+            return (
+                this.setState({ errorMsg: "You need minimum 3 characters! Try again:)" })
+            )
+        }
+
+        if (!email.includes("@")) {
+            e.preventDefault()
+            return (
+                this.setState({ errorMsg: "You need monkey! Try again :)" })
+            )
+        }
+
+        if (email.indexOf(".") < email.indexOf("@")) {
+            e.preventDefault()
+            return (
+                this.setState({ errorMsg: "Email is not valid! Try again :)" })
+            )
         }
     }
 
     render() {
 
-
-
         return (
-            <form className="container" method="get">
+            <form className="container">
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" />
+                <input onChange={this.onChange} id="name" name="name" type="text" value={this.state.name} />
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" />
-                <input onClick={this.errorHandler} type="Submit" />
-
-                <p id="para"></p>
+                <input onChange={this.onChange} id="email" name="email" type="email" value={this.state.email} />
+                <input onClick={this.validation} type="submit" />
+                <p>{this.state.errorMsg}</p>
             </form >
         )
     }
