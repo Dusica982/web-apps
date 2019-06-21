@@ -23,3 +23,12 @@ export const getUser = (id) => {
         })
 }
 
+export const sendValidatedData = (data) => {
+    const apiData = JSON.stringify(data)
+    let url = "https://jsonplaceholder.typicode.com/users/";
+
+    return fetch(url, {
+        method: "POST",
+        body: apiData
+    })
+}

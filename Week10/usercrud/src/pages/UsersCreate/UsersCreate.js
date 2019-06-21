@@ -1,5 +1,6 @@
 import React from 'react'
 import './UsersCreateStyle.css';
+import { sendValidatedData } from '../../services/usersService';
 
 class UsersCreate extends React.Component {
     constructor(props) {
@@ -21,6 +22,18 @@ class UsersCreate extends React.Component {
             [name]: value
         })
         // console.log(name, value);
+    }
+
+    getData = () => {
+        const { name, email } = this.state;
+        let apiData = {
+            name: name,
+            email: email
+        }
+        sendValidatedData(apiData)
+            .then((data) => {
+                this.props.history.push('/users');
+            })
     }
 
     validation = (e) => {
@@ -46,6 +59,7 @@ class UsersCreate extends React.Component {
                 this.setState({ errorMsg: "Email is not valid! Try again :)" })
             )
         }
+        this.getData();
     }
 
     render() {
