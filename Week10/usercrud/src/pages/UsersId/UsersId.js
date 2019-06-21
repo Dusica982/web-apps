@@ -1,7 +1,7 @@
 import React from 'react';
 import { getUser } from '../../services/usersService';
 import './UsersIdStyle.css';
-
+import { fetchDeleteUser } from '../../services/usersService';
 
 class UsersId extends React.Component {
 
@@ -10,11 +10,20 @@ class UsersId extends React.Component {
         this.state = {
             user: {}
         }
+        this.onChange = this.onChange.bind(this);
     }
 
     componentDidMount() {
         getUser(this.props.match.params.userId)
             .then((user) => this.setState({ user }))
+    }
+
+    onChange() {
+        fetchDeleteUser(this.props.match.params.userId)
+            .then((response) => {
+                console.log(response);
+                this.props.history.push('/users');
+            })
     }
 
     render() {
@@ -31,7 +40,7 @@ class UsersId extends React.Component {
                 <input id="city" type="text" name="city" value={this.state.user.city} disabled />
 
                 <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={this.onChange} >Delete</button>
             </form>
         )
     }

@@ -32,3 +32,10 @@ export const sendValidatedData = (data) => {
         body: apiData
     })
 }
+
+export const fetchDeleteUser = (userId) => {
+    let url = "https://jsonplaceholder.typicode.com/users/" + userId;
+    return fetch(url, {
+        method: "DELETE"
+    })
+}   

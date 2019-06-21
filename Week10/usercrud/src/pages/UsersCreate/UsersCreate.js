@@ -33,6 +33,8 @@ class UsersCreate extends React.Component {
         sendValidatedData(apiData)
             .then((data) => {
                 this.props.history.push('/users');
+                console.log(data);
+
             })
     }
 
